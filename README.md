@@ -1,2 +1,4 @@
-# UVP-projektna-TdF2
-Projektna naloga za predmet UVP, v kateri analiziram podatke o dirki Tour de France.
+# UVP-projektna-TdF
+Projektna naloga za predmet UVP, v kateri analiziram podatke o dirki Tour de France. Podatke sem zajela iz spletne strani https://www.procyclingstats.com/. S pomočjo nekaj pomožnih funkcij in regex vzorcev, ki so v datoteki z naslovom "ekstrakcija_podatkov", pobrala podatke, ki so me zanimali. To so podatki o vseh etapah, njihovem zmagovalcu, dolžini, profilu, itd. in podatki o zmagovalcih celotne dirke Tour de France (njihova starost, država, itd.). Potem sem ustvarila v "glavni_datoteki" funkcijo, ki vse pobrane podatke logično razvrsti v dva slovarja, ki sem ju potem izvozila v csv datoteki.
+
+Ostalo sem naredila v jupyter notebooks, kjer sem podatke analizirala. Analizirala sem tako samo strukturo Tour de France, kot so recimo dolžina etap, procent gorskih etap na posamičen Tour, število kronometrov na Touru in število etap na posamezen Tour, in podatke o zmagovalcih etap ter celotnega Toura.
