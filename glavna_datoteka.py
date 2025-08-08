@@ -157,53 +157,38 @@ def zazeni() :
 
 
 import csv
-
-
-
-
-
-
-
-
-
 def shrani_podatke_v_csv(podatki, filename='etape.csv'):
      # vsi columni
      fieldnames = ['leto', 'etapa']
      # dodamo še etapo in leto iz ključev
      if podatki:
          prvi_kljuc = next(iter(podatki))
-         fieldnames.extend(kljuc for kljuc in podatki[prvi_kljuc].kljucs() if kljuc not in fieldnames)
+         fieldnames.extend(kljuc for kljuc in podatki[prvi_kljuc].keys() if kljuc not in fieldnames)
 
      with open(filename, 'w', newline='', encoding='utf-8-sig') as csvfile:  # utf-8-sig za Excel
-         pisec = csv.Dictpisec(csvfile, fieldnames=fieldnames)
+         pisec = csv.DictWriter(csvfile, fieldnames=fieldnames)
          pisec.writeheader()
          for (etapa, leto), data in podatki.items():
              vrstica = {'leto': leto, 'etapa': etapa}
              vrstica.update(data)
              pisec.writerow(vrstica)
 
-def shrani_zmagovalcee_v_csv(na_leto_zmagovalci, filename='letni_zmagovalci.csv'):
+def shrani_zmagovalce_v_csv(na_leto_zmagovalci, filename='letni_zmagovalci.csv'):
      fieldnames = ['leto']
      if na_leto_zmagovalci:
          prvi_kljuc = next(iter(na_leto_zmagovalci))
-         fieldnames.extend(kljuc for kljuc in na_leto_zmagovalci[prvi_kljuc].kljucs() if kljuc not in fieldnames)
+         fieldnames.extend(kljuc for kljuc in na_leto_zmagovalci[prvi_kljuc].keys() if kljuc not in fieldnames)
 
      with open(filename, 'w', newline='', encoding='utf-8-sig') as csvfile:
-         pisec = csv.Dictpisec(csvfile, fieldnames=fieldnames)
+         pisec = csv.DictWriter(csvfile, fieldnames=fieldnames)
          pisec.writeheader()
          for leto, data in na_leto_zmagovalci.items():
              vrstica = {'leto': leto}
              vrstica.update(data)
              pisec.writerow(vrstica)
 
-
-
-
-
-
-
 if __name__=="__main__" :
     podatki, na_leto_zmagovalci = zazeni()
     shrani_podatke_v_csv(podatki)
-    shrani_zmagovalcee_v_csv(na_leto_zmagovalci)
-    print("Naprintano use")
+    shrani_zmagovalce_v_csv(na_leto_zmagovalci)
+    print("Naprintano")
