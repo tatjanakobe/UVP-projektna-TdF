@@ -46,7 +46,7 @@ vzorec_zmagovalec = re.compile(
 )
 
 
-import re
+
 
 vzorec_zmagovalec_tdf = re.compile(
     r'<td class="fs10 clr999 "[^>]*>.*?'  # začetek
