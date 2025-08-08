@@ -158,7 +158,7 @@ def zazeni() :
 
 import csv
 def shrani_podatke_v_csv(podatki, filename='etape.csv'):
-     # vsi columni
+     
      fieldnames = ['leto', 'etapa']
      # dodamo še etapo in leto iz ključev
      if podatki:
