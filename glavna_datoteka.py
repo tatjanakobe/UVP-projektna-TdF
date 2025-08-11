@@ -152,7 +152,7 @@ def zazeni() :
    
         else : 
             continue
-    print(podatki)
+  
     return podatki , na_leto_zmagovalci
 
 
