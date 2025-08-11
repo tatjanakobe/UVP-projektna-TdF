@@ -21,11 +21,7 @@ def url_leto(leto) : #za razultate posamičnih etap v nekem letu
 def url_leto_tdf(leto) : #za zmagovalca celotnega toura 
     return f'https://www.procyclingstats.com/race/tour-de-france/{leto}/gc'
 
-def url_leto_kom(leto) : #za zmagovalca naslova 'king of the mountains'
-    return f'https://www.procyclingstats.com/race/tour-de-france/{leto}/kom'
 
-def url_leto_green(leto) : #za najboljšega šprinterja(ta ima oblečeno zeleno majico, zato je v nadaljnem kdaj, ko se nanaša na šprinterja, uporabljena spremenljivka z besedo 'green')
-    return f'https://www.procyclingstats.com/race/tour-de-france/{leto}/points'
 
 
 #VZORCI:
